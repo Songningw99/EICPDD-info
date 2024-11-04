@@ -1,0 +1,41 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 1,
+ start_date = '1995-05-16_12:00:00',
+ end_date   = '1995-05-17_12:00:00',
+ interval_seconds = 21600
+/
+
+&geogrid
+ parent_id         =   1
+ parent_grid_ratio =   1
+ i_parent_start    =   1
+ j_parent_start    =   1
+ e_we              =  500
+ e_sn              =  300
+ geog_data_res = 'default'
+ dx = 3000,
+ dy = 3000,
+ map_proj = 'lambert'
+ ref_lat   =  43.89628180039139
+ ref_lon   =  -91.35861056751467	 
+ truelat1  =  30.0
+ truelat2  =  60.0
+ stand_lon =  -91.35861056751467
+ geog_data_path = 'WPS_GEOG/'
+ opt_geogrid_tbl_path = 'geogrid/'
+/
+
+&ungrib
+ out_format = 'WPS',
+! prefix     = 'UP_FILE'
+ prefix     = 'SFC_FILE'
+/
+
+&metgrid
+ fg_name = 'UP_FILE', 'SFC_FILE', 'PRES'
+! opt_output_from_metgrid_path = ''
+ opt_metgrid_tbl_path         = 'metgrid/',
+ io_form_metgrid = 2, 
+/
+
