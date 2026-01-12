@@ -1,0 +1,46 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 3,
+ start_date = '2003-05-10_12:00:00', '2003-05-10_12:00:00', '2003-05-10_12:00:00',
+ end_date   = '2003-05-11_12:00:00', '2003-05-11_12:00:00', '2003-05-11_12:00:00',
+ interval_seconds = 21600
+ active_grid = .true., .true., .true.,
+ io_form_geogrid = 2,
+ opt_output_from_geogrid_path = './',
+ debug_level = 0
+/
+
+&geogrid
+ parent_id         =   0,   1,   2,
+ parent_grid_ratio =   1,   3,   3,
+ i_parent_start    =   1,  59,  64,
+ j_parent_start    =   1,  29,  46,
+ e_we              = 181, 271, 511,
+ e_sn              = 151, 211, 301,
+ geog_data_res = 'default', 'default', 'default',
+ dx        = 27000,
+ dy        = 27000,
+ map_proj  = 'lambert', ! 'lambert', 'lambert',
+ ref_lat   =  40.00,
+ ref_lon   =  -94.00,
+ truelat1  =  30.0
+ truelat2  =  60.0
+ stand_lon =  -88.28876028023149
+ geog_data_path = '/data/jtrapp/c/songning/WPS_GEOG/'
+ opt_geogrid_tbl_path = '/data/keeling/a/songning/WRF/WPS/geogrid/'
+/
+
+&ungrib
+ out_format = 'WPS',
+! prefix     = '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36/UP_FILE'
+ prefix     = '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36/SFC_FILE'
+/
+
+&metgrid
+ fg_name         = '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36/UP_FILE', '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36/SFC_FILE', '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36/PRES'
+ io_form_metgrid = 2, 
+ opt_output_from_metgrid_path = '/data/keeling/a/songning/c/WRF_results/NEST1_TEST2/ERA5/historical/20030510_12_-88.29_36.36',
+ opt_metgrid_tbl_path         = '/data/keeling/a/songning/WRF/WPS/metgrid/',
+/
+
+
